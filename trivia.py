@@ -18,7 +18,7 @@ intents.messages = True
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
-LEADERBOARD_FILE = "leaderboard.json"
+LEADERBOARD_FILE = "leaderboard.json" #creates json file for the leaderboard if it does not exist 
 
 def load_leaderboard():
     if os.path.exists(LEADERBOARD_FILE):
@@ -101,7 +101,7 @@ async def hint(ctx):
     hint_message = f"The answer is {len(answer)} letters long, starts with '{answer[0].upper()}' and ends with '{answer[-1].upper()}'."
     await ctx.send(f"💡 **Hint:** {hint_message}")
 
-@tasks.loop(minutes=120)
+@tasks.loop(minutes=120) #loop is a variable 
 async def scheduled_trivia():
     channel = bot.get_channel(1064323770715734049)
     if channel:
