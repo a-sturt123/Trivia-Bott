@@ -103,7 +103,7 @@ async def hint(ctx):
 
 @tasks.loop(minutes=120) #loop is a variable 
 async def scheduled_trivia():
-    channel = bot.get_channel(1064323770715734049)
+    channel = bot.get_channel(your_channel_id) #this is where you plug in the channel id of the channel you want the bot to post in
     if channel:
         url = "https://api.api-ninjas.com/v1/trivia"
         headers = {"X-Api-Key": API_NINJAS_KEY}
